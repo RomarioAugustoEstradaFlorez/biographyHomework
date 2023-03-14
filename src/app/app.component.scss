@@ -1,0 +1,160 @@
+$--bg-white: #ffffff;
+
+div#card {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	background-color: $--bg-white;
+	background-image: url("../assets/img/pattern.svg");
+}
+
+div#right {
+	flex: 1.5;
+  padding: 70px;
+  overflow-x: auto;
+}
+
+div#left {
+	flex: 1;
+	background-image: url("../assets/img/tesla.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.container {
+  padding: 0 10%;
+  background-color: $--bg-white;
+  padding: 70px;
+  -webkit-box-shadow: 4px 8px 42px -10px rgba(0,0,0,0.51);
+  -moz-box-shadow: 4px 8px 42px -10px rgba(0,0,0,0.51);
+  box-shadow: 4px 8px 42px -10px rgba(0,0,0,0.51);
+  border-radius: 30px;
+  margin-bottom: 32px;
+  
+  &--info {
+    display: flex;
+    justify-content: space-between;
+    
+    & h2 {
+      margin-top: 12px;
+    }
+  }
+
+  &--bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    & h2 {
+      margin: 8px 0;
+      text-align: center;
+    }
+
+    & p {
+      width: 100%;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &--img {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+
+    & button {
+      box-shadow: 0px 10px 14px -7px #276873;
+      background:linear-gradient(to bottom, #84d0fa 5%, #408c99 100%);
+      background-color:#84d0fa;
+      border-radius:8px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:20px;
+      font-weight:bold;
+      padding:13px 32px;
+      text-decoration:none;
+      text-shadow:0px 1px 0px #3d768a;
+      border: 0px;
+      &:hover {
+        background:linear-gradient(to bottom, #408c99 5%, #84d0fa 100%);
+        background-color:#408c99;
+      }
+      &:active {
+        position:relative;
+        top:1px;
+      }
+    }
+    
+    & input[type='text'],textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f5f5f5;
+      margin: 16px 0px;
+      &:focus {
+        background: #fff;
+      }
+    }
+
+    & textarea {
+      width: 100%;
+      height: 80px;
+      resize: none;
+    }
+        
+  }
+}
+
+.video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+
+// tablet and Mobile
+@media (max-width: 700px) {
+  div#card {
+    height: auto;
+    width: 100%;
+    display: block;
+  }
+  div#right,#left {
+    height: auto;
+    width: 100%;
+    display: block;
+  }
+  div#right {
+    padding: 0px;
+  }
+	h2 {
+		font-size: 1.2em;
+	}
+	div#card {
+		flex-direction: column;
+	}
+	div#left {
+		padding: 20vh 5vh;
+	}
+  .text {
+    padding: 30px;
+  }
+}
